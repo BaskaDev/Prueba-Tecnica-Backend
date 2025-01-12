@@ -22,6 +22,7 @@ public class BackendPruebaApplication {
 				@Override
 				public void addCorsMappings(CorsRegistry registry) {
 					registry.addMapping("/**")
+							.allowedOrigins("https://frontend-prueba-wine.vercel.app")
 							.allowedMethods("HEAD", "GET", "PUT", "POST", "DELETE", "PATCH");
 				}
 			};
