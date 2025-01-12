@@ -21,9 +21,13 @@ public class BackendPruebaApplication {
 			return new WebMvcConfigurer() {
 				@Override
 				public void addCorsMappings(CorsRegistry registry) {
-					registry.addMapping("/**")
-							.allowedOrigins("https://frontend-prueba-wine.vercel.app")
-							.allowedMethods("HEAD", "GET", "PUT", "POST", "DELETE", "PATCH");
+				
+						registry.addMapping("/**")
+				                .allowedOrigins("https://frontend-prueba-wine.vercel.app")
+				                .allowedMethods("GET", "POST", "PUT", "DELETE")
+				                .allowedHeaders("Content-Type", "Authorization")
+				                .allowCredentials(true);
+							
 				}
 			};
 		}
